@@ -1,0 +1,132 @@
+---
+const experience = [
+  {
+    company: "Тетаком",
+    period: "Апрель 2023 - настоящее время",
+    role: "Frontend-разработчик",
+    details:
+      "Разработка SPA-приложений и развитие UI-библиотеки компании для нефтегазовой отрасли.",
+  },
+  {
+    company: "2Nova Interactive",
+    period: "Ноябрь 2017 - апрель 2023",
+    role: "Frontend-разработчик",
+    details:
+      "Верстка, дизайн-системы, разработка и поддержка проектов на React, Next.js, Ant Design, Redux, Effector и GraphQL.",
+  },
+  {
+    company: "Веб-студия «Торт»",
+    period: "Январь 2016 - октябрь 2017",
+    role: "Frontend-разработчик",
+    details:
+      "Frontend-разработка на HTML, CSS и JavaScript, работа с Bootstrap, jQuery, modX, React, SASS и gulp.",
+  },
+];
+---
+
+<section class="experience" aria-labelledby="experience-title">
+  <div class="content">
+    <div class="heading">
+      <p class="eyebrow">Опыт</p>
+      <h2 id="experience-title">
+        12+ лет в интерфейсах: от верстки до сложных SPA
+      </h2>
+    </div>
+    <div class="timeline">
+      {
+        experience.map((item) => (
+          <article class="item">
+            <p class="period">{item.period}</p>
+            <h3>{item.company}</h3>
+            <p class="role">{item.role}</p>
+            <p class="details">{item.details}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    background: var(--color-panel);
+    border-block: 1px solid var(--color-line);
+    padding: 5rem 1.5rem;
+  }
+
+  .content {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .heading {
+    max-width: 760px;
+    margin-bottom: 2.5rem;
+  }
+
+  .eyebrow {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: var(--color-ink);
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  .timeline {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: minmax(160px, 0.8fr) minmax(0, 1fr) minmax(0, 2fr);
+    gap: 1.5rem;
+    align-items: start;
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    padding: 1.4rem;
+  }
+
+  .period {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+  }
+
+  h3 {
+    color: var(--color-ink);
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+
+  .role {
+    color: var(--color-accent-strong);
+    font-weight: 700;
+  }
+
+  .details {
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 760px) {
+    .experience {
+      padding: 4rem 1rem;
+    }
+
+    h2 {
+      font-size: 2.1rem;
+    }
+
+    .item {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+  }
+</style>

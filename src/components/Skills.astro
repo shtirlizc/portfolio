@@ -1,0 +1,130 @@
+---
+const skillGroups = [
+  {
+    title: "Core frontend",
+    items: ["HTML", "CSS", "JavaScript", "TypeScript", "Git"],
+  },
+  {
+    title: "Frameworks",
+    items: ["React", "Next.js", "Angular", "Astro"],
+  },
+  {
+    title: "State & data",
+    items: ["Redux", "Effector", "GraphQL"],
+  },
+  {
+    title: "UI systems",
+    items: ["Ant Design", "Design systems", "SPA", "Adaptive layout"],
+  },
+  {
+    title: "Дополнительно",
+    items: ["Nest", "Telegram Mini App", "modX", "SASS", "gulp"],
+  },
+];
+---
+
+<section class="skills" aria-labelledby="skills-title">
+  <div class="content">
+    <p class="eyebrow">Стек</p>
+    <h2 id="skills-title">Инструменты для продуктового frontend</h2>
+    <div class="groups">
+      {
+        skillGroups.map((group) => (
+          <article class="group">
+            <h3>{group.title}</h3>
+            <ul>
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills {
+    padding: 5rem 1.5rem;
+  }
+
+  .content {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    max-width: 720px;
+    color: var(--color-ink);
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  .groups {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .group {
+    min-height: 100%;
+    background: var(--color-panel);
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  h3 {
+    color: var(--color-ink);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+  }
+
+  li {
+    background: var(--color-panel-alt);
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    line-height: 1.2;
+    padding: 0.45rem 0.6rem;
+  }
+
+  @media (max-width: 960px) {
+    .groups {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 620px) {
+    .skills {
+      padding: 4rem 1rem;
+    }
+
+    h2 {
+      font-size: 2.1rem;
+    }
+
+    .groups {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
