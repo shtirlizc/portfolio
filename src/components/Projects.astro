@@ -1,28 +1,53 @@
 ---
+import project1 from "../assets/1.png";
+import project2 from "../assets/2.png";
+import project3 from "../assets/3.png";
+import project4 from "../assets/4.png";
+import project5 from "../assets/5.png";
+import project6 from "../assets/6.png";
+
 const projects = [
   {
-    title: "Корпоративные SPA-приложения",
-    description:
-      "Место для кейса о продуктовых интерфейсах, интеграции данных и развитии пользовательских сценариев.",
-    stack: ["Angular", "TypeScript", "UI library"],
-    url: "",
-    image: "",
+    title: "Лендинг исследования от Сетки и hh.ru",
+    description: "Целью разработки была адаптивная, семантичная верстка с хорошим перфомансом",
+    stack: ['Astro'],
+    url: "https://hrbrand.setka.ru/survey2026/",
+    image: project1.src,
   },
   {
-    title: "Дизайн-система и UI-компоненты",
-    description:
-      "Место для скриншотов компонентов, Storybook или примеров экранов, где видна системная работа с UI.",
-    stack: ["React", "Ant Design", "Design systems"],
-    url: "",
-    image: "",
+    title: "Stiki",
+    description: "Моей задачей в проекте было привести визуал в полное соответствие с макетами и исправление багов",
+    stack: ['Next.js', 'Pixel perfect'],
+    url: "https://stiki.ru/",
+    image: project2.src,
   },
   {
-    title: "Next.js и React-проекты",
-    description:
-      "Место для публичной ссылки, описания задачи, роли в проекте и результата для бизнеса или команды.",
-    stack: ["Next.js", "React", "GraphQL"],
-    url: "",
-    image: "",
+    title: "ИЖС Уфа",
+    description: "Разработал весь цикл: рисование протипов по ТЗ, выбор стека, проектирование БД, верстка, интеграция, деплой",
+    stack: ['Next.js', 'Supabase', 'Dokploy'],
+    url: "https://doma102.ru/houses",
+    image: project3.src,
+  },
+  {
+    title: "Mental help",
+    description: "Сайт центр психологического консультирования со сбором обратный звонков, блогом и админкой на Modx",
+    stack: ['Modx', 'Адаптивная верстка', 'Кроссбраузерная верстка'],
+    url: "https://mental-help.info/",
+    image: project4.src,
+  },
+  {
+    title: "Welldesk",
+    description: "Требовался лендинг с блогом. реализовал его на Astro Content-first подходом. Сайт находится на иностранном хостинге, доступен только с ВПН",
+    stack: ['Astro', 'Content-first подход', 'Cloudflare DB'],
+    url: "https://welldesk.io/",
+    image: project5.src,
+  },
+  {
+    title: "Petrolance",
+    description: "Требовался лендинг с обратной связью. (Сайт находится на иностранном хостинге, доступен только с ВПН)",
+    stack: ['Astro'],
+    url: "https://petrolance.com/",
+    image: project6.src,
   },
 ];
 ---
@@ -32,8 +57,8 @@ const projects = [
     <p class="eyebrow">Работы</p>
     <h2 id="works-title" class="section-title">Примеры работ</h2>
     <p class="section-intro">
-      Здесь зарезервировано место для фотографий, ссылок и коротких описаний
-      кейсов. Сейчас блок готов к заполнению реальными материалами.
+      Описания кейсов, ссылки на проекты и короткий контекст по
+      работам.
     </p>
     <div class="projects">
       {
@@ -54,12 +79,14 @@ const projects = [
             </div>
             <div class="project-body">
               <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <ul aria-label={`Стек проекта ${project.title}`}>
-                {project.stack.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
+              {project.description && <p>{project.description}</p>}
+              {project.stack.length > 0 && (
+                <ul aria-label={`Стек проекта ${project.title}`}>
+                  {project.stack.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              )}
               {project.url ? (
                 <a
                   class="project-link"
@@ -67,7 +94,7 @@ const projects = [
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Открыть проект
+                  Открыть
                 </a>
               ) : (
                 <span class="project-link muted">
