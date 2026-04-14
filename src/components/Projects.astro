@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
+
 import project1 from "../assets/1.png";
 import project2 from "../assets/2.png";
 import project3 from "../assets/3.png";
 import project4 from "../assets/4.png";
 import project5 from "../assets/5.png";
-import project6 from "../assets/6.png";
+import project6 from "../assets/6.jpg";
 
 const projects = [
   {
@@ -13,7 +15,7 @@ const projects = [
       "Целью разработки была адаптивная, семантичная верстка с хорошим перфомансом",
     stack: ["Astro"],
     url: "https://hrbrand.setka.ru/survey2026/",
-    image: project1.src,
+    image: project1,
   },
   {
     title: "Stiki",
@@ -21,7 +23,7 @@ const projects = [
       "Моей задачей в проекте было привести визуал в полное соответствие с макетами и исправление багов",
     stack: ["Next.js", "Pixel perfect"],
     url: "https://stiki.ru/",
-    image: project2.src,
+    image: project2,
   },
   {
     title: "ИЖС Уфа",
@@ -29,7 +31,7 @@ const projects = [
       "Разработал весь цикл: рисование протипов по ТЗ, выбор стека, проектирование БД, верстка, интеграция, деплой",
     stack: ["Next.js", "Supabase", "Dokploy"],
     url: "https://doma102.ru/houses",
-    image: project3.src,
+    image: project3,
   },
   {
     title: "Mental help",
@@ -37,7 +39,7 @@ const projects = [
       "Сайт центр психологического консультирования со сбором обратный звонков, блогом и админкой на Modx",
     stack: ["Modx", "Адаптивная верстка", "Кроссбраузерная верстка"],
     url: "https://mental-help.info/",
-    image: project4.src,
+    image: project4,
   },
   {
     title: "Welldesk",
@@ -45,15 +47,14 @@ const projects = [
       "Требовался лендинг с блогом. реализовал его на Astro Content-first подходом. Сайт находится на иностранном хостинге, доступен только с ВПН",
     stack: ["Astro", "Content-first подход", "Cloudflare DB"],
     url: "https://welldesk.io/",
-    image: project5.src,
+    image: project5,
   },
   {
-    title: "Petrolance",
-    description:
-      "Требовался лендинг с обратной связью. (Сайт находится на иностранном хостинге, доступен только с ВПН)",
-    stack: ["Astro"],
+    title: "Career korus-consulting",
+    description: "Верстка лендинга",
+    stack: ["HTML", "CSS", "GSAP"],
     url: "https://petrolance.com/",
-    image: project6.src,
+    image: project6,
   },
 ];
 ---
@@ -71,7 +72,7 @@ const projects = [
           <article class="project-card">
             <div class="project-media">
               {project.image ? (
-                <img
+                <Image
                   src={project.image}
                   alt={`Скриншот проекта ${project.title}`}
                 />

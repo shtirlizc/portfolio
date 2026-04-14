@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import profilePicture from "../assets/profile.jpg";
 
 interface Props {
@@ -29,7 +31,13 @@ const facts = [
       </div>
     </div>
     <div class="portrait">
-      <img src={profilePicture.src} alt="Марат Сарваров" class="pfp" />
+      <Image
+        src={profilePicture}
+        width="296"
+        height="296"
+        alt="Марат Сарваров"
+        class="pfp"
+      />
       <ul class="facts" aria-label="Ключевые факты">
         {facts.map((fact) => <li>{fact}</li>)}
       </ul>

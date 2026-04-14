@@ -25,7 +25,7 @@ const contacts = [
   <div class="content">
     <div class="heading">
       <p class="eyebrow">Контакты</p>
-      <h2 id="contacts-title">Готов обсудить frontend-задачи</h2>
+      <h2 id="contacts-title">Готов поработать вместе</h2>
       <p>
         Пишите в Telegram или на email. Контакты открыты для проектной работы,
         частичной и полной занятости.
@@ -34,7 +34,7 @@ const contacts = [
     <div class="contact-links">
       {
         contacts.map((contact) => (
-          <a href={contact.url} class="contact-link">
+          <a href={contact.url} target="_blank" class="contact-link">
             <span class="label">{contact.label}</span>
             <span class="value">{contact.value}</span>
             <span class="note">{contact.note}</span>
