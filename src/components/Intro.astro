@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
+import GithubLogo from "../assets/github.svg";
 import profilePicture from "../assets/profile.jpg";
 
 interface Props {
@@ -28,6 +29,15 @@ const facts = [
       <div class="actions" aria-label="Основные действия">
         <a class="button primary" href="#contacts">Связаться</a>
         <a class="button secondary" href="#works">Примеры работ</a>
+        <a
+          class="button secondary"
+          href="https://github.com/shtirlizc"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <GithubLogo />
+          GitHub
+        </a>
       </div>
     </div>
     <div class="portrait">
@@ -105,10 +115,17 @@ const facts = [
     display: inline-flex;
     font-size: 1rem;
     font-weight: 700;
+    gap: 0.5rem;
     justify-content: center;
     min-height: 48px;
     padding: 0.75rem 1.1rem;
     text-decoration: none;
+  }
+
+  .button :global(svg) {
+    flex: 0 0 auto;
+    height: 1.15em;
+    width: 1.15em;
   }
 
   .primary {
