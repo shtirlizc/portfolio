@@ -4,19 +4,16 @@ const contacts = [
     label: "Email",
     value: "shtirlizc@gmail.com",
     url: "mailto:shtirlizc@gmail.com",
-    note: "предпочитаемый способ связи",
   },
   {
     label: "Telegram",
     value: "@shtirlizc",
     url: "https://t.me/shtirlizc",
-    note: "быстрые сообщения",
   },
   {
     label: "Телефон",
     value: "+7 917 402-24-24",
     url: "tel:+79174022424",
-    note: "Уфа, удаленно или гибрид",
   },
 ];
 ---
@@ -37,7 +34,6 @@ const contacts = [
           <a href={contact.url} target="_blank" class="contact-link">
             <span class="label">{contact.label}</span>
             <span class="value">{contact.value}</span>
-            <span class="note">{contact.note}</span>
           </a>
         ))
       }
