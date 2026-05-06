@@ -1,4 +1,6 @@
 ---
+import YmCounter from "../components/ym-counter.astro";
+
 interface Props {
   title: string;
   description?: string;
@@ -28,6 +30,7 @@ const faviconHref = `${baseUrl}favicon.jpg`;
     <title>{title}</title>
   </head>
   <body>
+    <YmCounter id="109076763" withNoscript />
     <slot />
   </body>
 </html>
